@@ -1,0 +1,34 @@
+[requires]
+pango/1.54.0
+atk/2.38.0
+cairo/1.18.0
+gdk-pixbuf/2.30.0
+gobject-introspection/1.39.0
+wayland/1.9.91
+wayland-protocols/1.12
+mirclient/0.22.0
+mircookie/0.17.0
+libepoxy/1.0
+cloudproviders/0.2.5
+
+[generators]
+CMakeDeps
+CMakeToolchain
+PkgConfigDeps
+
+[options]
+# Default: build shared libraries and position-independent code where supported
+*:shared=True
+*:fPIC=True
+
+[tool_requires]
+# tools used at build-time (pkgconf commonly required for pkg-config files)
+pkgconf/2.2.0
+
+[imports]
+bin, *.dll -> ./bin
+lib, *.dylib* -> ./lib
+lib, *.so* -> ./lib
+
+[layout]
+cmake_layout

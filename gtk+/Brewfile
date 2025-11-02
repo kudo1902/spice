@@ -1,0 +1,49 @@
+# Brewfile generated from conanfile.txt requirements
+# Map Conan packages to Homebrew formulae where available.
+# For packages not provided by Homebrew, you'll need to build from source or
+# provide a tap/replacement. See comments below.
+
+# GTK and friends (versions from configure.ac)
+# pango required version: 1.37.3
+brew "pango@1.37.3"
+# atk required version: 2.15.1
+brew "atk@2.15.1"
+# cairo required version: 1.14.0
+brew "cairo@1.14.0"
+# gdk-pixbuf required version: 2.30.0
+brew "gdk-pixbuf@2.30.0"
+# gobject-introspection required version: 1.39.0
+brew "gobject-introspection@1.39.0"
+# libepoxy (epoxy) required version: 1.0
+brew "libepoxy@1.0"
+
+# Wayland (may be optional on macOS; included for completeness)
+# wayland required version: 1.9.91
+brew "wayland@1.9.91"
+# wayland-protocols required version: 1.12
+brew "wayland-protocols@1.12"
+
+# Build-time helpers
+brew "pkgconf"
+brew "pkg-config"
+brew "autoconf"
+brew "automake"
+brew "libtool"
+brew "gettext"
+brew "cmake"
+
+# Lower-level libraries (often pulled in as dependencies but listing explicitly helps)
+brew "harfbuzz"
+brew "freetype"
+brew "fontconfig"
+brew "libpng"
+
+# Notes / manual packages
+# The following Conan packages are not available in Homebrew core and must be
+# handled manually (build from source, find a tap, or remove if not needed on macOS):
+# - mirclient (Mir / client libraries)      -> required version: 0.22.0 (not typically available on macOS)
+# - mircookie (Mir helper)                 -> required version: 0.17.0 (not available)
+# - cloudproviders                         -> required version: 0.2.5 (not available)
+
+# If you want to manage Homebrew packages reproducibly, commit this Brewfile
+# and on a new machine run: `brew bundle --file=Brewfile`.
